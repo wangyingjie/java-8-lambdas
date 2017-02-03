@@ -22,6 +22,13 @@ public class ArtistsFixed {
 
     public String getArtistName(int index) {
         Optional<Artist> artist = getArtist(index);
+
+        /*return artist.map(artist1 -> artist1.getName())
+                .orElse("unknown");*/
+
+        artist.map(artist1 -> artist1.getName());
+
+        // todo 可以通过 Artist::getName 来重构上面的方法引用
         return artist.map(Artist::getName)
                      .orElse("unknown");
     }

@@ -53,6 +53,7 @@ public class Iteration {
     public void filterArtistsFromLondonPrinted(List<Artist> allArtists) {
         // BEGIN filter_londoners_printed
         allArtists.stream()
+                // filter 属于惰性求值方法
                 .filter(artist -> {
                     //此处并不会并打印，如果调用了 count 方法则会打印
                     System.out.println(artist.getName());
@@ -68,7 +69,7 @@ public class Iteration {
                     System.out.println(artist.getName());
                     return artist.isFrom("London");
                 })
-                .count();
+                .count();//及早求值方法
         // END internal_count_londoners_printed
         return count;
     }

@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static com.insightfullogic.java8.examples.chapter3.StreamExercises.*;
@@ -33,5 +34,12 @@ public class StreamExercisesTest {
 		List<Integer> values = StreamExercises.map(parallelStream, x -> x + 1);
         assertEquals(Arrays.asList(2, 3, 4), values);
     }
-    
+
+
+    @Test
+    public void streamOf(){
+        List<String> collect = Stream.of("a", "b", "c").collect(Collectors.toList());
+
+        System.out.println(collect);
+    }
 }
