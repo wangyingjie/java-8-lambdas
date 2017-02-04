@@ -5,6 +5,7 @@ import java.util.stream.IntStream;
 public class SerialToParallel {
 
     public static int sumOfSquares(IntStream range) {
+        //并行求平方和
         return range.parallel()
                     .map(x -> x * x)
                     .sum();
